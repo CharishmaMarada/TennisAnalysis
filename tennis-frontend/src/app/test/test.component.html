@@ -1,0 +1,13 @@
+<mat-card>
+  <mat-form-field>
+    <input matInput placeholder="0" #FirstInput>
+  </mat-form-field>
+  <div *ngFor="let number of nums">
+    <label>input #{{number}}</label>
+    <mat-form-field >
+      <input matInput placeholder="1" [id]="'p'+number" [(ngModel)]="qtd[number]">
+    </mat-form-field>
+  </div>
+  <button mat-raised-button class="width button-center" type="submit" (click)="submitClicked()">Submit</button>
+</mat-card>ß
+

@@ -1,0 +1,48 @@
+<div class="BG">
+  <div fxLayoutAlign="center" >
+    <mat-card fxFlex="25" class="fix"  >
+      <div class="chart-wrapper" *ngIf="barChartColors && barChartData">
+        <h1>{{heading}}</h1>
+        <div style="display: block;" >
+          <canvas baseChart
+                  [datasets]="barChartData"
+                  [labels]="barChartLabels"
+                  [options]="barChartOptions"
+                  [plugins]="barChartPlugins"
+                  [legend]="barChartLegend"
+                  [colors]="barChartColors"
+                  [chartType]="barChartType">
+          </canvas>
+        </div>
+      </div>
+    </mat-card>
+  </div>
+  <h1 class="invisble">{{match_data[0].match_id}} </h1>
+  <div fxLayoutAlign="center" class="example-container">
+    <table mat-table [dataSource]="match_data" class="mat-elevation-z8" >
+      <ng-container matColumnDef="match_id" >
+        <th mat-header-cell *matHeaderCellDef> Match ID </th>
+        <td mat-cell *matCellDef="let element"> {{element.match_id}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="p1" >
+        <th mat-header-cell *matHeaderCellDef> Player 1 </th>
+        <td mat-cell *matCellDef="let element"> {{element.p1}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="p2" >
+        <th mat-header-cell *matHeaderCellDef> Player 2 </th>
+        <td mat-cell *matCellDef="let element"> {{element.p2}} </td>
+      </ng-container>
+      <ng-container matColumnDef="match_won" >
+        <th mat-header-cell *matHeaderCellDef> Match Won </th>
+        <td mat-cell *matCellDef="let element"> {{element.match_won}} </td>
+      </ng-container>
+      <tr mat-header-row *matHeaderRowDef="displayedMatchColumns;sticky: true"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedMatchColumns;" (click)="matchClicked(row)"></tr>
+    </table>
+  </div>
+</div>
+
+
+

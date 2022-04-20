@@ -1,0 +1,86 @@
+<div class="BG">
+  <div class="content">
+    <div class="title">
+      Tennis Analysis with
+      <div class="slider">
+        <div> Point Score </div>
+        <div> Set Score</div>
+        <div> Set Winner</div>
+      </div>
+    </div>
+    <div fxLayoutAlign="center center" fxFlexFill>
+      <mat-card fxFlex="35" class="container">
+        <div class="horizontal move">
+<!--          <h3 class="padding width black">header</h3>-->
+          <h3 class="padding width">Player1</h3>
+          <h3 class="padding width">Player2</h3>
+          <h3 class="padding width">Set Winner</h3>
+          <h3 class="black">filler</h3>
+        </div>
+        <div class="horizontal">
+          <h3 class="padding ">Set 1 Score</h3>
+          <mat-form-field class="padding width">
+            <input matInput  [(ngModel)]="p1Data[0]">
+          </mat-form-field >
+          <mat-form-field class="width padding">
+            <input matInput   [(ngModel)]="p2Data[0]">
+          </mat-form-field >
+          <mat-form-field class="width padding">
+            <mat-select [(ngModel)]="winData[0]" >
+              <mat-option *ngFor="let point  of Players" [value]="point" >
+                {{point}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+
+          <button mat-raised-button type="submit" (click)="addSetClicked()">Add Set</button>
+        </div>
+        <div *ngFor="let number of setNums">
+          <div class="horizontal" >
+            <h3 class="padding ">Set {{number+1}} Score</h3>
+            <mat-form-field class="padding width">
+              <input matInput  [(ngModel)]="p1Data[number]">
+            </mat-form-field >
+            <mat-form-field class="width padding">
+              <input matInput  [(ngModel)]="p2Data[number]">
+            </mat-form-field>
+            <mat-form-field class="width padding">
+              <mat-select [(ngModel)]="winData[number]" >
+                <mat-option *ngFor="let point  of Players" [value]="point" >
+                  {{point}}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+            <button mat-raised-button type="submit" (click)="addSetClicked()">Add Set</button>
+          </div>
+        </div>
+        <div class="horizontal">
+          <h3 class="padding ">Point Score</h3>
+          <mat-form-field class="padding width">
+            <!--          <input matInput [id]="'gameScoreP1'+number" [name]="'gameScoreP1'+number" [(ngModel)]="p1Data[0]">-->
+            <mat-select [(ngModel)]="p1DataGame[0]">
+              <mat-option *ngFor="let point  of points" [value]="point" >
+                {{point}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field >
+          <mat-form-field class="width padding">
+            <!--          <input matInput [id]="'gameScoreP1'+number"  [name]="'gameScoreP2'+number" [(ngModel)]="p2Data[0]">-->
+            <mat-select [(ngModel)]="p2DataGame[0]">
+              <mat-option *ngFor="let point  of points" [value]="point" >
+                {{point}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+          <button mat-raised-button type="submit" (click)="clearClicked(0)">Clear</button>
+          <h3 class="black">filler Helloa</h3>
+        </div>
+        <div class="horizontal">
+          <h3 class="black">filler</h3>
+          <button mat-raised-button class="width button-center" type="submit" (click)="submitClicked()">Submit</button>
+          <h3 class="black">filler</h3>
+        </div>
+      </mat-card>
+    </div>
+  </div>
+</div>

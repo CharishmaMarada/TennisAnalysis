@@ -1,0 +1,95 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  height: auto;
+  max-width: 35%;
+  margin: 0 auto;
+  padding-left:15px;
+  padding-right:15px;
+}
+.padding{
+  padding-right: 20px;
+}
+.move{
+  margin-left: 60px;
+}
+.horizontal {
+  display:flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center
+
+}
+.width {
+  width: 80px;
+}
+
+.button-center {
+  position: relative;
+  /*-ms-transform: translate(-50%, -50%);*/
+  /*transform: translate(-50%, -50%);*/
+}
+.mat-option:hover {
+  background-color: cornflowerblue;
+  cursor: pointer;
+}
+.BG{
+  background-image: url("/assets/tennisBG6.avif");
+  margin:0;
+  padding:0;
+  height: 100%;
+  background-size: cover;
+  background-repeat:no-repeat;
+  font: 400 15px/1.8 "Lato", sans-serif;
+  position: relative;
+  /*opacity: 0.50;*/
+}
+
+.slider{
+  color: cyan;
+  margin-left: 12px;
+  box-sizing: border-box;
+  animation: slider 6s linear 1 ;
+  overflow: hidden;
+}
+@keyframes slider{
+  0%{margin-top: -400px;}
+  5%{margin-top: -200px;}
+  30%{margin-top: -200px;}
+  35%{margin-top: -100px;}
+  65%{margin-top: -100px;}
+  70%{margin-top:  0px;}
+  100%{margin-top: 0px;}
+}
+.content{
+  width: 100%;
+  position: absolute;
+  top:12%;
+  left: 1%;
+  /*transform: translateY(-50%);*/
+  color: #fff;
+}
+.title{
+  font-size: 70px;
+  line-height: 100px;
+  font-weight: bold;
+  height: 100px;
+  text-align: center;
+  display: flex;
+  overflow: hidden;
+
+}
+.content p{
+  color: white;
+  font-size: 20px;
+  line-height: 28px;
+
+}
+.mat-card {
+  background-color: darkslategray;
+}
+.black{
+  color: darkslategray;
+}

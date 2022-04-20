@@ -1,0 +1,21 @@
+.fix{
+  max-height: 25%;
+  margin-top: 10%
+}
+
+.example-container {
+  height: 400px;
+  max-width: 100%;
+  overflow: auto;
+}
+
+table {
+  width: 50%;
+}
+.mat-row:hover {
+  background-color: cornflowerblue;
+  cursor: pointer;
+}
+.invisble {
+  color: white;
+}

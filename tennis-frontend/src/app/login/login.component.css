@@ -1,0 +1,28 @@
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  height: auto;
+  max-width: 480px;
+  margin: 0 auto;
+  padding-left:15px;
+  padding-right:15px;
+}
+.padding{
+  padding-right: 20px;
+}
+.horizontal {
+  display:flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center
+
+}
+.width {
+  width: 80px;
+}
+.black{
+  color: #424242;
+}
